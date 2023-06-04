@@ -3,12 +3,13 @@
 #include <iostream>
 #include <string>
 
-#include "console.h"
-
 using namespace std;
 
-#define MOVE "[%d;%dH"
-#define CHANGE_COLOR "[1;34;%dm"
+#define MOVE_V_UP        "[%dA"
+#define MOVE_V_DOWN      "[%dB"
+#define MOVE_H_UP        "[%dC"
+#define MOVE_H_DOWN      "[%dD"
+#define CHANGE_COLOR     "[1;34;%dm"
 #define CHANGE_COLOR_256 "[%d;5;%dm"
 
 term_ term;
@@ -20,16 +21,24 @@ term_ term_::operator<<(const string &s) {
 }
 
 string moveVertical(int i) {
-  int nowX = wherex(), nowY = wherey();
-  char res[10];
-  sprintf(res, MOVE, nowY - i, nowX);
+  char res[20];
+  if (i > 0) {
+    sprintf(res, MOVE_V_UP, i);
+  } else {
+    sprintf(res, MOVE_V_DOWN, i);
+
+  }
   return res;
 }
 
 string moveHorizontal(int i) {
-  int nowX = wherex(), nowY = wherey();
-  char res[10];
-  sprintf(res, MOVE, nowY, nowX + i);
+  char res[20];
+  if (i > 0) {
+    sprintf(res, MOVE_H_UP, i);
+  } else {
+    sprintf(res, MOVE_H_DOWN, i);
+
+  }
   return res;
 }
 
