@@ -12,8 +12,8 @@
 #define eraseFromLineBeginningToCursor   "[1K"
 #define eraseLine                        "[2K"
 
-#define newLine                          "\n"
-#define reset                            "[0m"
+#define newLine "\n"
+#define resetColor "[0m"
 
 using namespace std;
 
