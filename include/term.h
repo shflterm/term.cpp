@@ -26,7 +26,8 @@ string moveVertical(int i);
 string moveHorizontal(int i);
 
 enum ColorWhere {
-  FOREGROUND = 30, BACKGROUND = 40
+  FOREGROUND = 30, BACKGROUND = 40,
+  FOREGROUND_BRIGHT = 90, BACKGROUND_BRIGHT = 100
 };
 
 enum Color {

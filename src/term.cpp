@@ -36,5 +36,4 @@ string color(ColorWhere where, Color color) {
   char res[20];
   sprintf(res, CHANGE_COLOR, color + where);
   return res;
-
 }
