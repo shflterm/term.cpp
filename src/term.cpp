@@ -9,6 +9,7 @@ using namespace std;
 
 #define MOVE "[%d;%dH"
 #define CHANGE_COLOR "[1;34;%dm"
+#define CHANGE_COLOR_256 "[%d;5;%dm"
 
 term_ term;
 
@@ -35,5 +36,11 @@ string moveHorizontal(int i) {
 string color(ColorWhere where, Color color) {
   char res[20];
   sprintf(res, CHANGE_COLOR, color + where);
+  return res;
+}
+
+string color256(ColorWhere where, int color) {
+  char res[20];
+  sprintf(res, CHANGE_COLOR_256, where + 8, color);
   return res;
 }
