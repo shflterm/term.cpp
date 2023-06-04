@@ -13,6 +13,7 @@
 #define eraseLine                        "[2K"
 
 #define newLine                          "\n"
+#define reset                            "[0m"
 
 using namespace std;
 
@@ -43,5 +44,6 @@ enum Color {
 };
 
 string color(ColorWhere where, Color color);
+string color256(ColorWhere where, int color);
 
 #endif //TERM_CPP_LIBRARY_H
