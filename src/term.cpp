@@ -35,9 +35,9 @@ term_ term_::operator<<(const string &s) {
 
 string moveVertical(int i) {
   char res[20];
-  if (i > 0) {
+  if (i < 0) {
     sprintf(res, MOVE_V_UP, i);
-  } else if (i < 0) {
+  } else if (i > 0) {
     sprintf(res, MOVE_V_DOWN, i);
 
   }
