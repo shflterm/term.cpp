@@ -15,6 +15,18 @@ using namespace std;
 term_ term;
 
 term_ term_::operator<<(const string &s) {
+  if (s == eraseAll) {
+#ifdef _WIN32
+    system("cls");
+#elif __linux__ || __APPLE__
+    system("clear");
+#else
+    cout << eraseAll;
+    cout.flush();
+#endif
+    return *this;
+  }
+
   cout << s;
   cout.flush();
   return *this;
