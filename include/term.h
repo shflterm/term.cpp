@@ -28,6 +28,7 @@ extern term_ term;
 
 string moveVertical(int i);
 string moveHorizontal(int i);
+string teleport(int x, int y);
 
 enum ColorWhere {
   FOREGROUND = 30, BACKGROUND = 40,
