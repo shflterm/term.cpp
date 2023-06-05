@@ -9,6 +9,7 @@ using namespace std;
 #define MOVE_V_DOWN      "[%dB"
 #define MOVE_H_RIGHT     "[%dC"
 #define MOVE_H_LEFT      "[%dD"
+#define TELEPORT         "[%d;%dH"
 #define CHANGE_COLOR     "[1;34;%dm"
 #define CHANGE_COLOR_256 "[%d;5;%dm"
 
@@ -50,6 +51,12 @@ string moveHorizontal(int i) {
   } else if (i < 0) {
     sprintf(res, MOVE_H_LEFT, i);
   }
+  return res;
+}
+
+string teleport(int x, int y) {
+  char res[20];
+  sprintf(res, TELEPORT, y, x);
   return res;
 }
 

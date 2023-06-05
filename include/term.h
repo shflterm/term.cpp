@@ -15,6 +15,9 @@
 #define newLine "\n"
 #define resetColor "[0m"
 
+#define saveCursorPosition "[s"
+#define loadCursorPosition "[u"
+
 using namespace std;
 
 class term_ {
