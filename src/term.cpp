@@ -7,8 +7,8 @@ using namespace std;
 
 #define MOVE_V_UP        "[%dA"
 #define MOVE_V_DOWN      "[%dB"
-#define MOVE_H_UP        "[%dC"
-#define MOVE_H_DOWN      "[%dD"
+#define MOVE_H_RIGHT     "[%dC"
+#define MOVE_H_LEFT      "[%dD"
 #define CHANGE_COLOR     "[1;34;%dm"
 #define CHANGE_COLOR_256 "[%d;5;%dm"
 
@@ -24,7 +24,7 @@ string moveVertical(int i) {
   char res[20];
   if (i > 0) {
     sprintf(res, MOVE_V_UP, i);
-  } else {
+  } else if (i < 0) {
     sprintf(res, MOVE_V_DOWN, i);
 
   }
@@ -34,10 +34,9 @@ string moveVertical(int i) {
 string moveHorizontal(int i) {
   char res[20];
   if (i > 0) {
-    sprintf(res, MOVE_H_UP, i);
-  } else {
-    sprintf(res, MOVE_H_DOWN, i);
-
+    sprintf(res, MOVE_H_RIGHT, i);
+  } else if (i < 0) {
+    sprintf(res, MOVE_H_LEFT, i);
   }
   return res;
 }
