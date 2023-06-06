@@ -39,7 +39,6 @@ string moveVertical(int i) {
     sprintf(res, MOVE_V_UP, i);
   } else if (i > 0) {
     sprintf(res, MOVE_V_DOWN, i);
-
   }
   return res;
 }
