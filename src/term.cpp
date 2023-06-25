@@ -19,7 +19,7 @@ term_ term_::operator<<(const string &s) {
   if (s == eraseAll) {
 #ifdef _WIN32
     system("cls");
-#elif __linux__ || __APPLE__
+#elif defined(__linux__) || defined(__APPLE__)
     system("clear");
 #else
     cout << eraseAll;
