@@ -3,8 +3,6 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 #define MOVE_V_UP        "[%dA"
 #define MOVE_V_DOWN      "[%dB"
 #define MOVE_H_RIGHT     "[%dC"
@@ -12,6 +10,8 @@ using namespace std;
 #define TELEPORT         "[%d;%dH"
 #define CHANGE_COLOR     "[1;34;%dm"
 #define CHANGE_COLOR_256 "[%d;5;%dm"
+
+using std::cout;
 
 term_ term;
 

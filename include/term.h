@@ -18,7 +18,7 @@
 #define saveCursorPosition "[s"
 #define loadCursorPosition "[u"
 
-using namespace std;
+using std::vector, std::string;
 
 class term_ {
  public:
