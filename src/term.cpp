@@ -16,57 +16,60 @@ using std::cout;
 term_ term;
 
 term_ term_::operator<<(const string &s) {
-  if (s == eraseAll) {
+    if (s == eraseAll) {
 #ifdef _WIN32
-    system("cls");
+        system("cls");
 #elif defined(__linux__) || defined(__APPLE__)
-    system("clear");
+        system("clear");
 #else
-    cout << eraseAll;
-    cout.flush();
+        cout << eraseAll;
+        cout.flush();
 #endif
-    return *this;
-  }
+        return *this;
+    }
 
-  cout << s;
-  cout.flush();
-  return *this;
+    cout << s;
+    cout.flush();
+    return *this;
 }
 
 string moveVertical(int i) {
-  char res[20];
-  if (i < 0) {
-    sprintf(res, MOVE_V_UP, i);
-  } else if (i > 0) {
-    sprintf(res, MOVE_V_DOWN, i);
-  }
-  return res;
+    char res[20];
+    if (i < 0) {
+        sprintf(res, MOVE_V_UP, i);
+    } else if (i > 0) {
+        sprintf(res, MOVE_V_DOWN, i);
+    }
+    return res;
 }
 
 string moveHorizontal(int i) {
-  char res[20];
-  if (i > 0) {
-    sprintf(res, MOVE_H_RIGHT, i);
-  } else if (i < 0) {
-    sprintf(res, MOVE_H_LEFT, i);
-  }
-  return res;
+    char res[20];
+    if (i > 0) {
+        sprintf(res, MOVE_H_RIGHT, i);
+    } else if (i < 0) {
+        sprintf(res, MOVE_H_LEFT, i);
+    }
+    return res;
 }
 
 string teleport(int x, int y) {
-  char res[20];
-  sprintf(res, TELEPORT, y, x);
-  return res;
+    char res[20];
+#ifdef _WIN32
+    x++; y++;
+#endif
+    sprintf(res, TELEPORT, y, x);
+    return res;
 }
 
 string color(ColorWhere where, Color color) {
-  char res[20];
-  sprintf(res, CHANGE_COLOR, color + where);
-  return res;
+    char res[20];
+    sprintf(res, CHANGE_COLOR, color + where);
+    return res;
 }
 
 string color256(ColorWhere where, int color) {
-  char res[20];
-  sprintf(res, CHANGE_COLOR_256, where + 8, color);
-  return res;
+    char res[20];
+    sprintf(res, CHANGE_COLOR_256, where + 8, color);
+    return res;
 }
