@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <vector>
 
 #define eraseFromCursorToScreenEnd       "[0J"
 #define eraseFromScreenBeginningToCursor "[1J"
