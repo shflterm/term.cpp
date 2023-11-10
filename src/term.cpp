@@ -15,7 +15,7 @@ using std::cout;
 
 term_ term;
 
-term_ term_::operator<<(const string &s) {
+term_ term_::operator<<(const string &s) const {
     if (s == eraseAll) {
 #ifdef _WIN32
         system("cls");
@@ -33,7 +33,7 @@ term_ term_::operator<<(const string &s) {
     return *this;
 }
 
-string moveVertical(int i) {
+string moveVertical(const int i) {
     char res[20];
     if (i < 0) {
         sprintf(res, MOVE_V_UP, i);
@@ -43,7 +43,7 @@ string moveVertical(int i) {
     return res;
 }
 
-string moveHorizontal(int i) {
+string moveHorizontal(const int i) {
     char res[20];
     if (i > 0) {
         sprintf(res, MOVE_H_RIGHT, i);
@@ -62,13 +62,13 @@ string teleport(int x, int y) {
     return res;
 }
 
-string color(ColorWhere where, Color color) {
+string color(const ColorWhere where, const Color color) {
     char res[20];
     sprintf(res, CHANGE_COLOR, color + where);
     return res;
 }
 
-string color256(ColorWhere where, int color) {
+string color256(const ColorWhere where, const int color) {
     char res[20];
     sprintf(res, CHANGE_COLOR_256, where + 8, color);
     return res;

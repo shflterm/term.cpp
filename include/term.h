@@ -23,7 +23,7 @@ using std::vector, std::string;
 
 class term_ {
  public:
-  term_ operator<<(const string &s);
+  term_ operator<<(const string &s) const;
 };
 extern term_ term;
 
