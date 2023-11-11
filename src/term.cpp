@@ -11,7 +11,7 @@
 #define CHANGE_COLOR     "[1;34;%dm"
 #define CHANGE_COLOR_256 "[%d;5;%dm"
 
-using std::cout;
+using std::cout, std::string;
 
 term_ term;
 
